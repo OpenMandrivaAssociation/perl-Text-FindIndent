@@ -1,15 +1,13 @@
 %define upstream_name    Text-FindIndent
-%define upstream_version 0.12
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.12
+Release:	2
 
 Summary:	Heuristically determine the indent style
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Text-FindIndent
-Source0:	https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Text-FindIndent-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Text-FindIndent-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ This is an experimental distribution that attempts to intuit the underlying
 indent "policy" for a text file (most likely a source code file).
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -66,8 +64,7 @@ make test
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.40.0-1mdv2010.0
 + Revision: 401516
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %0.12 fixed license field
 
 * Sun Mar 08 2009 Jérôme Quelin <jquelin@mandriva.org> 0.04-1mdv2009.1
 + Revision: 352842
